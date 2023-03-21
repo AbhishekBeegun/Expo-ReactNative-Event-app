@@ -1,9 +1,12 @@
 import React from 'react'
 import { Stack,useRouter } from "expo-router";
-import { Text , View,SafeAreaView } from "react-native"
+import { Text , View,SafeAreaView, ScrollView,FlatList } from "react-native"
 import ArtistCard from "../components/Artists/ArtistCard"
 import EventCard from "../components/Events/EventCard"
 import HeaderBanner from "../components/home/HeaderBanner";
+import Artists from "../components/home/Artists";
+import Events from "../components/home/Events";
+import Footer from "../components/Basiclayout/Footer";
 const index = () => {
   return (
     <SafeAreaView>
@@ -11,25 +14,20 @@ const index = () => {
       <Stack.Screen
       options={{
         headerTitle:" Event App",
-        headerShadowVisible:true
+        headerShadowVisible:true,        
       }}/>
-
-
-     <View>
+      <ScrollView>
         <HeaderBanner/>
-        
 
-        <View>
-        <Text>Artist Available-----</Text>
-        <ArtistCard/>
-        </View>
+        <Artists/>   
 
+        <Events/> 
 
-        <View>
-        <Text>Event Available------</Text>
-        <EventCard/>
-        </View>
-    </View>
+        <Footer/>
+               
+
+      </ScrollView>
+
 
     </SafeAreaView>
   )
