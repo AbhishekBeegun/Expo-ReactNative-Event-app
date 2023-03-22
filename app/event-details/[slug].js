@@ -5,7 +5,6 @@ import EventHeader from "../../components/Events/components/EventHeader"
 import EventAbout from "../../components/Events/components/EventAbout"
 import EventSocials from "../../components/Events/components/EventSocials"
 import EventDisplay from "../../components/Events/components/EventDisplay"
-import Footer from "../../components/Basiclayout/Footer"
 
 
 
@@ -35,8 +34,7 @@ const EventDetails = () => {
         </View>
     </View>
 
-    <Footer/>
-
+ 
     </ScrollView>
     </SafeAreaView>
   )
