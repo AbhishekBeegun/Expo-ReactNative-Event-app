@@ -9,15 +9,15 @@ const ArtistCard = ({item}) => {
   const router = useRouter()
 
   const handleCardPress = () => {
-    router.push(`/artist-details/${item.id}`);  
+    router.push(`/artist-details/${item.slug}`);  
   };
 
   return (
-    <View className="h-[200px] rounded-lg w-[140px] border">
+    <View className="h-[200px] rounded-lg w-[140px] ">
       {/* backgroundImage */}
-      <Image className="absolute w-full h-full rounded-lg" 
+      <Image className="absolute w-full h-full rounded-lg opacity-80 bg-black" 
       resizeMode="cover"
-        source={{uri : `${item.img}` }}/>
+        source={{uri : `${item.mainPhoto.url}` }}/>
 
         <TouchableOpacity onPress={handleCardPress}>
           <View className="flex flex-col justify-between h-full">
@@ -25,7 +25,7 @@ const ArtistCard = ({item}) => {
             <View className="flex flex-row justify-between items-center p-2">
               {/* rating */}
               <View className="flex flex-row items-center justify-center gap-1">
-              <Text className="text-sm font-semibold text-white">{item.Rating}</Text>
+              <Text className="text-sm font-semibold text-white">{item.rating}</Text>
               <FontAwesome name="star" size={15} color="gold"  />
               </View>
 

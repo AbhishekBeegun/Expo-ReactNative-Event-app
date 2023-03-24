@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Text,View,TouchableOpacity} from "react-native"
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-const About = () => {
+const About = ({artistDescription}) => {
   const [Showmore, setShowmore] = useState(true)
 
   function showmorebtn(){
@@ -33,11 +33,11 @@ const About = () => {
         <View className="px-4">
           <Text className="text-lg font-semibold text-white">About</Text>
           {Showmore ? 
-          <View className="w-full h-[5vh] overflow-hidden">
-            <Text className="text-gray-400">Artist Details</Text>
+          <View className="w-full h-[8vh] overflow-hidden">
+            <Text className="text-gray-400 text-xs">{artistDescription}</Text>
           </View> :
-           <View className="w-full h-[50vh] overflow-hidden">
-             <Text className="text-gray-400">ArtistDetails</Text>
+           <View className="w-full h-auto overflow-hidden">
+             <Text className="text-gray-400 text-xs">{artistDescription}</Text>
            </View>}
 
 

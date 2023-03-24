@@ -1,34 +1,24 @@
 import React from 'react'
-import {Text,View,FlatList, ScrollView} from "react-native"
+import {Text,View,FlatList, ScrollView,ActivityIndicator} from "react-native"
 import ArtistCard from "../Artists/ArtistCard"
+
+import { useQuery } from "@apollo/client"
+import { ARTIST_QUERY } from "../../app/GQLQueries"
 
 const Artists = () => {
 
-    const artistavailable = [
-        { id : "1",
-          name : "Steve Aoki",
-          img : 'https://res.cloudinary.com/dn29xlaeh/image/upload/q_75,w_3000/beatgig-prod/f4xxp9vkgqid4ucwa7wl',
-          Rating : "5"
-        },
-        { id : "2",
-          name : "MINDTRIX",
-          img : 'https://res.cloudinary.com/dn29xlaeh/image/upload/q_75,w_3000/beatgig-prod/hwiahsaovryyjg1seej3',
-          Rating : "4.5"
-        },
-        { id : "3",
-          name : "Waka Floka Flame",
-          img : 'https://res.cloudinary.com/dn29xlaeh/image/upload/q_75,w_3000/beatgig-live/fn2nh4utog4rcnlanjrq',
-          Rating : "3"
-        }
-    ]
+  const {data} = useQuery(ARTIST_QUERY);
 
   return (
-    <View>
-        <Text>Artist Available-----</Text>
+    <View className="bg-black">
+        <Text className="text-white">Artist Available-----</Text>
+
+        {data && data.artists ?   
 
         <FlatList
          horizontal
-         data={artistavailable}
+
+         data={data.artists}
 
          renderItem={({item}) => <View className="px-1">
             
@@ -37,8 +27,14 @@ const Artists = () => {
          </View>
          }
          
-         keyExtractor={item => item.id}
-        />
+         keyExtractor={item => item.slug}
+        /> 
+        : <ActivityIndicator size={50}>
+        </ActivityIndicator>
+        }
+
+  
+
 
         <ScrollView>
 

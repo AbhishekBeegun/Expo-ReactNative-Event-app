@@ -3,13 +3,13 @@ import { Text,View,Image,TouchableOpacity } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
 
 
-const Header = () => {
+const Header = ({coverPhoto, MainPhoto,name,rating,location}) => {
   return (
-    <View className="h-[50vh] w-full m-auto">
+    <View className="h-[40vh] w-full m-auto bg-black">
 
-      <Image className="h-full w-full" 
+      <Image className="h-full w-full bg-black opacity-80" 
       source={{         
-        uri : 'https://res.cloudinary.com/dn29xlaeh/image/upload/q_75,h_1400/beatgig-live/jybufbh5j9fob7gp6lzv'
+        uri : `${coverPhoto.url}`
       }}/>
         
         <View className="absolute bottom-0 left-0 flex flex-row h-[100px] w-full items-center justify-center">
@@ -19,7 +19,7 @@ const Header = () => {
            <Image
            className="h-full w-full rounded-full" 
            source={{
-            uri : "https://res.cloudinary.com/dn29xlaeh/image/upload/q_75,w_640/beatgig-live/wyrzpswnoks7c0g24ccq"
+            uri : `${MainPhoto.url}`
            }}/>
           </View>
 
@@ -27,20 +27,20 @@ const Header = () => {
           <View className="flex flex-col justify-evenly px-8">
           {/* artist name */}
            <View>
-            <Text className="text-xl font-semibold text-white">Myles O'Neal</Text>
+            <Text className="text-xl font-semibold text-white">{name}</Text>
            </View>
 
           {/* rating anf location */}
           <View className="flex flex-row gap-5 items-center justify-center">
             {/* rating */}
             <View className="flex flex-row items-center justify-center gap-1">
-              <Text className="text-sm font-semibold text-white">5</Text>
+              <Text className="text-sm font-semibold text-white">{rating}</Text>
               <FontAwesome name="star" size={15} color="gold"  />
             </View>
 
             {/* location */}
             <View>
-              <Text className="text-sm font-medium text-white">Location</Text>
+              <Text className="text-sm font-medium text-white">{location}</Text>
             </View>
 
           </View>

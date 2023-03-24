@@ -1,30 +1,36 @@
 import React from 'react'
 import { useRouter,useSearchParams,Stack } from "expo-router"
-import { Text,View,SafeAreaView,ScrollView } from "react-native"
-import Header from "../../components/Artists/components/Header"
-import About from "../../components/Artists/components/About"
-import Socials from "../../components/Artists/components/Socials"
-import Display from "../../components/Artists/components/Display"
+import { SafeAreaView,Text } from "react-native";
+import ArtistDetails from "../../components/Artists/components/ArtistDetails";
+import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
+import {GRAPHQL_CMS_API} from '@env'
 
-const ArtistDetails = () => {
+
+// Initialize Apollo Client
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({uri: GRAPHQL_CMS_API})
+});
+
+const ArtistDetail = () => {
+
   const params = useSearchParams()
   const router = useRouter()
+
   return (
     <SafeAreaView>
 
-      <ScrollView>
-      <View>
-          <Header/>
-          <About/>
-          <Socials/>
-          <Display/>  
-    </View>
+      <Stack.Screen
+      options={{
+        headerTitle:"Artist details",
+        headerTransparent:true        
+      }}/>
+      <ApolloProvider client={client}>
+      <ArtistDetails params={params.id}/>
+      </ApolloProvider>
 
-
- 
-    </ScrollView>
     </SafeAreaView>
   )
 }
 
-export default ArtistDetails
+export default ArtistDetail

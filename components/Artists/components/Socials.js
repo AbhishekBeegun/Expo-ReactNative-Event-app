@@ -1,11 +1,12 @@
 import React from 'react'
 import { Text,View } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import { useState } from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Socials = () => {
-  const rating = 5
+const Socials = ({instagram,ratings}) => {
+  const rating = {ratings}
 
   const [Stars] = useState([])
 
@@ -44,8 +45,8 @@ const Socials = () => {
           <TouchableOpacity>
           <View className="bg-gray-800 rounded-lg py-2 px-6">
           <Text>
-             <FontAwesome name="whatsapp" size={24} color="white" />   
-           </Text>
+          <MaterialIcons name="email" size={24} color="white" />   
+          </Text>
           </View>
           </TouchableOpacity>
 
