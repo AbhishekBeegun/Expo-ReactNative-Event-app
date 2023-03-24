@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlatList, Text,View,Image, ScrollView } from "react-native"
 import YoutubeIframe from "react-native-youtube-iframe"
+import DeezerPlaylist from "./DeezerPlaylist"
 
 const Display = ({gridfoto,videoLinks}) => {
 
@@ -47,7 +48,7 @@ const Display = ({gridfoto,videoLinks}) => {
           play={false}
           videoId={videoLinks[1]}
           />     
-        </View>
+          </View>
 
         </View>
 
@@ -56,15 +57,17 @@ const Display = ({gridfoto,videoLinks}) => {
         </View>
 
       </View>
-      {/* video */}
 
+      {/* video */}
       <View>
         
       </View>
 
       {/* music */}
 
+      {/* https://api.deezer.com/artist/3/top?limit=5  need params of artist id*/}
       <View>
+      <DeezerPlaylist/>
         
       </View>
 
