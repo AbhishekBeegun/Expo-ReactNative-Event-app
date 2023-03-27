@@ -5,7 +5,7 @@ const EventDisplay = () => {
   return (
     <View>
         <Text>
-            Events past Photo video
+            Events Photo video arist
         </Text>
     </View>
   )

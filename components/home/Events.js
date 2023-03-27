@@ -1,39 +1,35 @@
 import React from 'react'
-import { Text,View,FlatList } from "react-native"
+import { Text,View,FlatList,ActivityIndicator } from "react-native"
 import EventCard from "../Events/EventCard"
+import { useQuery } from "@apollo/client"
+import { EVENT_QUERY } from "../../app/GQLQueries"
 
 const Events = () => {
 
-  const Eventavailable = [
-    { id : "10",
-      name : "TayC Afro Love",
-      img : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/yTPa26KqT92rH97XoiD3',
-      mainArtist : "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/8iZaerncTNOEPKIvDIes"
-    },
-    { id : "11",
-      name : "Desire Francois",
-      img : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/wULIuiwLTNuAp9pbZmED',
-      mainArtist : "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ZWXeaORTQmkUSFemW0pa"
+  const {data} = useQuery(EVENT_QUERY);
 
-    },
-    { id : "12",
-      name : "DJ Seeb LA FAYA",
-      img : 'https://otayo.com/wp-content/uploads/2023/02/la-faya-roulman-dan-green-village.jpg',
-      mainArtist : "https://otayo.com/wp-content/uploads/2022/07/bigg-frankii-4.png"
-    }
-]
+
   return (
-    <View className="py-4">
-        <Text>Event Available -----</Text>
+    <View className="py-4 bg-black">
+        <Text className="text-white">Event Available -----</Text>
+
+        {data && data.events ?   
+
         <FlatList
         horizontal
-        data={Eventavailable}   
-        renderItem={({item}) => <View className="px-1">
+        data={data.events}   
+        renderItem={({item}) => 
+          <View className="px-1">
             <EventCard item={item}/>
           </View>
          }  
         keyExtractor={item => item.id}   
         />
+        : <ActivityIndicator size={50}>
+        </ActivityIndicator>
+        }
+
+
     </View>
   )
 }

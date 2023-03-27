@@ -36,12 +36,15 @@ const ArtistDetails = ({params}) => {
         <Display
         gridfoto={data.artist.gridPhoto}
         videoLinks={data.artist.videoLinks}
+        deezerID={data.artist.deezerId}
         /> 
         </View>       
          :
-         <ActivityIndicator size={50}>
+         <View className="flex justify-center items-center bg-black">
+         <ActivityIndicator size={60}>
 
          </ActivityIndicator>
+         </View>
         
          } 
     

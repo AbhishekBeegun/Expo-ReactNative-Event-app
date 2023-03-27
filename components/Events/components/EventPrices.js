@@ -2,14 +2,14 @@ import React from 'react'
 import { Text,View } from "react-native"
 
 
-const EventSocials = () => {
+const EventPrices = () => {
   return (
     <View>
         <Text>
-           Event reviews and social links
+           Event tickets
         </Text>
     </View>
   )
 }
 
-export default EventSocials
+export default EventPrices

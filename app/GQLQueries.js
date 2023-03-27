@@ -34,6 +34,53 @@ query MyQuery ($slug: String){
       location
       videoLinks
       socialLinks
+      deezerId
+    }
+  }
+  `
+
+  export const EVENT_QUERY = gql`
+  query EventQuery {
+    events {
+      slug
+      title
+      poster {
+        url
+      }
+      artist {
+        ... on Artist {
+          id
+          name
+          mainPhoto {
+            url
+          }
+        }
+      }
+    }
+  }
+  `;  
+
+  export const EVENT_DETAILS = gql `
+query EventDQuery ($slug: String){
+    event(where: {slug: $slug}) {
+      date
+      locationTitle
+      parking
+      poster {
+        url
+      }
+      eventDetails {
+        text
+      }
+      slug
+      ticketsPrice
+      title
+      artist {
+        ... on Artist {
+          name
+          videoLinks
+        }
+      }
     }
   }
   `

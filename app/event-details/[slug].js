@@ -1,12 +1,16 @@
 import React from 'react'
-import { useRouter,useSearchParams } from "expo-router"
-import { Text,View,SafeAreaView,ScrollView } from "react-native"
-import EventHeader from "../../components/Events/components/EventHeader"
-import EventAbout from "../../components/Events/components/EventAbout"
-import EventSocials from "../../components/Events/components/EventSocials"
-import EventDisplay from "../../components/Events/components/EventDisplay"
+import { useRouter,useSearchParams,Stack } from "expo-router"
+import { SafeAreaView } from "react-native"
+import EventINDetails from "../../components/Events/components/EventINDetails";
+import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
+import {GRAPHQL_CMS_API} from '@env'
 
 
+// Initialize Apollo Client
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new HttpLink({uri: GRAPHQL_CMS_API})
+});
 
 
 const EventDetails = () => {
@@ -16,26 +20,16 @@ const EventDetails = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView>
 
+      <Stack.Screen
+      options={{
+        headerTitle:"Event details",
+        headerTransparent:true        
+      }}/>
+      <ApolloProvider client={client}>
+      <EventINDetails params={params.slug}/>
+      </ApolloProvider>
 
-    <View>
-        <Text>
-        {params.slug}
-
-            Event Details
-        </Text>
-
-        <View>
-          <EventHeader/>
-          <EventAbout/>
-          <EventSocials/>
-          <EventDisplay/>          
-        </View>
-    </View>
-
- 
-    </ScrollView>
     </SafeAreaView>
   )
 }
