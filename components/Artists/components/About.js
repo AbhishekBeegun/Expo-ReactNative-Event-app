@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Text,View,TouchableOpacity} from "react-native"
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+
+
 const About = ({artistDescription}) => {
   const [Showmore, setShowmore] = useState(true)
 
@@ -42,7 +44,7 @@ const About = ({artistDescription}) => {
 
 
           <TouchableOpacity onPress={() => showmorebtn()}>
-                {Showmore ? <View className="flex flex-row items-center justify-center gap-2">
+                {Showmore ? <View className="flex flex-row items-center justify-center py-2 gap-2">
                 <Text className="font-semibold text-white">Show more</Text>
                 <AntDesign name="down" size={12} color="white" />
                 </View>:

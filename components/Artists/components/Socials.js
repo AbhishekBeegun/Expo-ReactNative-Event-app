@@ -24,7 +24,7 @@ const Socials = ({instagram,ratings}) => {
       {/* reviews and social */}
       <View>
        
-        <View className="flex flex-row items-center justify-between bg-gray-800 rounded-lg p-2">
+        <View className="flex flex-row items-center justify-between px-4 py-2 bg-gray-800 rounded-t-lg">
           <Text className="text-base font-semibold text-white">Reviews</Text>
           <View className="flex flex-row gap-2 items-center">
           {/* {Stars} */}

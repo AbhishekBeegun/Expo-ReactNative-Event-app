@@ -21,13 +21,24 @@ const EventINDetails = ({params}) => {
     <ScrollView>
     
     {data && data.event ? 
-    <View className="">
+    <View>
+
     <Header poster={data.event.poster}
     title={data.event.title}
-    location={data.event.locationTitle}/>
+    location={data.event.locationTitle}
+    date={data.event.date}/>
 
-    <Prices/>
-    <About/>
+
+
+    <About description={data.event.eventdescription}
+    lat={data.event.location.latitude}
+    long={data.event.location.longitude}
+    />
+
+    
+    <Prices nrml={data.event.nmltickets}
+    vip={data.event.viptickets}
+    elite={data.event.abovevip}/>
 
     <Display/> 
 

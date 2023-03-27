@@ -65,22 +65,39 @@ query EventDQuery ($slug: String){
     event(where: {slug: $slug}) {
       date
       locationTitle
+      location {
+        latitude
+        longitude
+      }
       parking
       poster {
         url
       }
-      eventDetails {
-        text
-      }
+      eventdescription
       slug
-      ticketsPrice
       title
+      abovevip
+      viptickets
+      nmltickets
       artist {
         ... on Artist {
           name
           videoLinks
         }
       }
+    }
+  }
+  `
+
+  export const EVENTARTIST_DETAILS = gql `
+query MyQuery ($slug: String){
+    artist(where: {slug: $slug}) {
+      mainPhoto {
+        url
+      }
+      name
+      slug
+      videoLinks
     }
   }
   `
