@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from "react";
-import { View,Text, Image } from "react-native"
+import { View,Text } from "react-native"
 import { Marker } from "react-native-maps";
 import MapView from "react-native-maps";
 
 const EventLocation = ({lat,long}) => {
-    const [mapRegion, setmapRegion] = useState({
+    const [mapRegion] = useState({
         latitude: lat,
         longitude: long,
         latitudeDelta: 0.0522,

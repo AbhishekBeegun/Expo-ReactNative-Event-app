@@ -40,11 +40,11 @@ const EventINDetails = ({params}) => {
     vip={data.event.viptickets}
     elite={data.event.abovevip}/>
 
-    <Display/> 
+    <Display artist={data.event.artist}/> 
 
     </View>       
      :
-     <View className="flex justify-center items-center bg-black">
+     <View className="flex justify-center items-center bg-black h-screen w-screen">
      <ActivityIndicator size={60}>
 
      </ActivityIndicator>

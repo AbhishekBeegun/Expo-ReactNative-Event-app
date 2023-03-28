@@ -29,6 +29,7 @@ query MyQuery ($slug: String){
       slug
       rating
       gridPhoto {
+        id
         url
       }
       location
@@ -81,23 +82,14 @@ query EventDQuery ($slug: String){
       nmltickets
       artist {
         ... on Artist {
+          id
           name
           videoLinks
+          mainPhoto {
+            url
+          }
         }
       }
-    }
-  }
-  `
-
-  export const EVENTARTIST_DETAILS = gql `
-query MyQuery ($slug: String){
-    artist(where: {slug: $slug}) {
-      mainPhoto {
-        url
-      }
-      name
-      slug
-      videoLinks
     }
   }
   `

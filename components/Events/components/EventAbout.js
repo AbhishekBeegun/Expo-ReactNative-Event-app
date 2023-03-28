@@ -11,7 +11,7 @@ const EventAbout = ({description,lat,long}) => {
     setShowmore(!Showmore);
   }
   return (
-    <View className="px-4 py-4 bg-black">
+    <View className="px-2 py-4 bg-black">
     
     <Text className="text-lg font-semibold text-white">About</Text>
     {Showmore ? 

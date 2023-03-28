@@ -18,7 +18,7 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
       <ScrollView contentContainerStyle={{flexDirection : "row" ,flexWrap :"wrap"}} >
         
         {gridfoto.map((item) => ( 
-        <View className="w-1/2 h-[150px]">
+        <View key={item.id} className="w-1/2 h-[150px]">
          <Image className="w-full h-full"
          resizeMode="cover" 
           source={{ uri : `${item.url}`}}/>
@@ -58,6 +58,7 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
        
        <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
         <Text className="font-semibold text-white">Music</Text>   
+        <Text className="font-semibold text-xs text-slate-700">SetTimout = 15 sec</Text> 
        </View>
 
       <DeezerPlaylist deezerID={deezerID}/>

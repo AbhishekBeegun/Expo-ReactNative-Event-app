@@ -1,12 +1,63 @@
 import React from 'react'
-import { Text,View } from "react-native"
+import { Text,View,Image } from "react-native"
+import YoutubeIframe from "react-native-youtube-iframe"
 
-const EventDisplay = () => {
+
+const EventDisplay = ({artist}) => {
+
+
   return (
     <View>
-        <Text>
-            Events Photo video arist
-        </Text>
+        {artist.map((item) => (
+          <View key={item.id} className="bg-black px-2">
+
+        <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+          <Text className="font-semibold text-white">Main artist</Text>   
+        </View>
+
+          <View className="flex flex-row justify-between items-center px-10 py-4">
+
+          <View className="h-[90px] w-[90px]">
+           <Image
+           className="h-full w-full rounded-full" 
+           source={{
+            uri : `${item.mainPhoto.url}`
+           }}/>
+          </View>
+
+          <View>
+            <Text className="text-xl font-semibold text-white">{item.name}</Text>
+           </View>
+
+           </View>
+{/* endofsdofjsidf */}
+
+       <View className="rounded-lg py-4">
+       
+       <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+        <Text className="font-semibold text-white">Video</Text>   
+        </View>
+        <View className="w-full">
+         <YoutubeIframe
+         webViewStyle={{opacity:0.99}}
+         height={200}
+         play={false}
+         videoId={item.videoLinks[0]}
+         />  
+         </View> 
+         <View className="w-full">
+         <YoutubeIframe
+         webViewStyle={{opacity:0.99}}
+         height={200}
+         play={false}
+         videoId={item.videoLinks[1]}
+         />     
+         </View>
+
+       </View>
+
+          </View>
+        ))}
     </View>
   )
 }

@@ -23,7 +23,7 @@ const Events = () => {
             <EventCard item={item}/>
           </View>
          }  
-        keyExtractor={item => item.id}   
+        keyExtractor={item => item.slug}   
         />
         : <ActivityIndicator size={50}>
         </ActivityIndicator>
