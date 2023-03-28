@@ -19,7 +19,7 @@ const About = ({artistDescription}) => {
         <View className="flex flex-row justify-center py-4 gap-8">
          
           <TouchableOpacity>
-          <View className="bg-white border border-black px-8 py-2 rounded-full">
+          <View className="border border-white px-8 py-2 rounded-full">
             <Ionicons name="ios-heart" size={20} color="red" />
           </View>
           </TouchableOpacity>

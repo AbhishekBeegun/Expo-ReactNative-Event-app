@@ -22,7 +22,7 @@ const DeezerPlaylist = ({deezerID}) => {
     
     const options = {
         method: 'GET',
-        url: `https://api.deezer.com/artist/${deezerID}/top?limit=10`,
+        url: `https://api.deezer.com/artist/${deezerID}/top?limit=5`,
         headers: {
           'X-RapidAPI-Key': 'a5ef13e236mshd1254dce2b5d8c0p1aa5b0jsna5849b80ca3f',
           'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'

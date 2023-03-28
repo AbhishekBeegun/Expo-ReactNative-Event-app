@@ -28,14 +28,15 @@ const EventINDetails = ({params}) => {
     location={data.event.locationTitle}
     date={data.event.date}/>
 
-
-
     <About description={data.event.eventdescription}
     lat={data.event.location.latitude}
     long={data.event.location.longitude}
+
+    nrml={data.event.nmltickets}
+    vip={data.event.viptickets}
+    elite={data.event.abovevip}
     />
 
-    
     <Prices nrml={data.event.nmltickets}
     vip={data.event.viptickets}
     elite={data.event.abovevip}/>
@@ -45,7 +46,7 @@ const EventINDetails = ({params}) => {
     </View>       
      :
      <View className="flex justify-center items-center bg-black h-screen w-screen">
-     <ActivityIndicator size={60}>
+     <ActivityIndicator size={40}>
 
      </ActivityIndicator>
      </View>

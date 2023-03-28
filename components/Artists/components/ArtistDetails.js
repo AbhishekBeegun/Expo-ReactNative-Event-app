@@ -41,7 +41,7 @@ const ArtistDetails = ({params}) => {
         </View>       
          :
          <View className="flex justify-center items-center bg-black h-screen w-screen">
-         <ActivityIndicator size={60}>
+         <ActivityIndicator size={40}>
 
          </ActivityIndicator>
          </View>
