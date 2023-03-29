@@ -3,7 +3,9 @@ import { Text,View,Image,TouchableOpacity } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
 
 
-const Header = ({coverPhoto, MainPhoto,name,rating,location}) => {
+const Header = ({coverPhoto, MainPhoto,name,rating,location,minprice,maxprice}) => {
+
+
   return (
     <View className="h-[40vh] w-full m-auto bg-black">
 
@@ -31,7 +33,7 @@ const Header = ({coverPhoto, MainPhoto,name,rating,location}) => {
            </View>
 
           {/* rating anf location */}
-          <View className="flex flex-row gap-5 items-center justify-center">
+          <View className="flex flex-row gap-5 items-baseline justify-center py-1">
             {/* rating */}
             <View className="flex flex-row items-center justify-center gap-1">
               <Text className="text-sm font-semibold text-white">{rating}</Text>
@@ -43,8 +45,15 @@ const Header = ({coverPhoto, MainPhoto,name,rating,location}) => {
               <Text className="text-sm font-medium text-white">{location}</Text>
             </View>
 
-          </View>
 
+
+          </View>
+          <View className="py-1 flex flex-row gap-1 px-4">
+              <Text className="text-xs font-semibold text-white">Rs {minprice}</Text>
+              <Text className="text-xs font-semibold text-white"> - </Text>             
+              <Text className="text-xs font-semibold text-white">Rs {maxprice}</Text>
+
+            </View>
           </View>
 
         </View>

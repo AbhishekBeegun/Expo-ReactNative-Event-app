@@ -6,6 +6,7 @@ import Artists from "../components/home/Artists";
 import Events from "../components/home/Events";
 import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
 import {GRAPHQL_CMS_API} from '@env'
+import LocalArtists from "../components/home/LocalTalents";
 
 // Initialize Apollo Client
 const client = new ApolloClient({
@@ -30,7 +31,7 @@ const index = () => {
 
         <ApolloProvider client={client}>
 
-
+        {/* <LocalArtists/> */}
         <Artists/>   
 
         <Events/> 

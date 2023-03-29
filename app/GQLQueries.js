@@ -1,5 +1,19 @@
 import { gql } from "@apollo/client";
 
+
+export const LOCALARTIST_QUERY = gql`
+query MyQuery {
+  artists(where: {localArtist: true}) {
+    slug
+    name
+    mainPhoto {
+      url
+    }
+    rating
+  }
+}
+`; 
+
 export const ARTIST_QUERY = gql`
 query MyQuery {
     artists (first:5){
@@ -9,7 +23,6 @@ query MyQuery {
         url
       }
       rating
-      bookingPrice
     }
   }
 `;  
@@ -22,7 +35,6 @@ query MyQuery {
         url
       }
       rating
-      bookingPrice
     }
   }
 `;  
@@ -31,7 +43,6 @@ export const ARTIST_DETAILS = gql `
 query MyQuery ($slug: String){
     artist(where: {slug: $slug}) {
       artistDescription
-      bookingPrice
       coverPhoto {
         url
       }
@@ -49,6 +60,8 @@ query MyQuery ($slug: String){
       videoLinks
       socialLinks
       deezerId
+      minPrice
+      maxPrice
     }
   }
   `

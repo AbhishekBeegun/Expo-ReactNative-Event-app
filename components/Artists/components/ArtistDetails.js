@@ -25,7 +25,10 @@ const ArtistDetails = ({params}) => {
         MainPhoto={data.artist.mainPhoto}
         name={data.artist.name}
         location={data.artist.location}
-        rating={data.artist.rating}/>
+        rating={data.artist.rating}
+        minprice={data.artist.minPrice}
+        maxprice={data.artist.maxPrice}
+        />
 
         <About artistDescription={data.artist.artistDescription}
         />
