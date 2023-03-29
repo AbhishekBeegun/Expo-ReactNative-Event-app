@@ -4,6 +4,7 @@ import { SafeAreaView,Text } from "react-native";
 import ArtistDetails from "../../components/Artists/components/ArtistDetails";
 import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
 import {GRAPHQL_CMS_API} from '@env'
+import Backbtn from "../../components/Basiclayout/Backbtn";
 
 
 // Initialize Apollo Client
@@ -22,8 +23,12 @@ const ArtistDetail = () => {
 
       <Stack.Screen
       options={{
-        headerTitle:"Artist details",
-        headerTransparent:true        
+        headerTitle:"",
+        headerTransparent:true  ,
+        headerLeft : () => (
+          <Backbtn/>
+        )
+              
       }}/>
       <ApolloProvider client={client}>
       <ArtistDetails params={params.id}/>

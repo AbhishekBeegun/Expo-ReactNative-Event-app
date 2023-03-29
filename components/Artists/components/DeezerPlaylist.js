@@ -6,6 +6,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { ScrollView, View,Text, Image,TouchableOpacity } from "react-native"
 import {Audio} from "expo-av"
+import {RapidAPI_Key} from '@env'
+
+const deezerapi = RapidAPI_Key
 
 
 const DeezerPlaylist = ({deezerID}) => {
@@ -24,7 +27,7 @@ const DeezerPlaylist = ({deezerID}) => {
         method: 'GET',
         url: `https://api.deezer.com/artist/${deezerID}/top?limit=5`,
         headers: {
-          'X-RapidAPI-Key': 'a5ef13e236mshd1254dce2b5d8c0p1aa5b0jsna5849b80ca3f',
+          'X-RapidAPI-Key': {deezerapi},
           'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
         }
       };
@@ -70,9 +73,9 @@ const DeezerPlaylist = ({deezerID}) => {
           <TouchableOpacity key={item.id}
           disabled={isPlaying}
           onPress={()=> MediaControl(item.preview)}
-          className="w-full h-auto flex flex-row items-center justify-between border px-4 py-2">
+          className="w-full h-auto flex flex-row items-center justify-between border px-4 py-1">
             <View className="h-[80px] w-[80px]" >
-              <Image className="w-full h-full rounded-lg"
+              <Image className="w-full h-full rounded-sm"
               source={{uri : `${item.album.cover_medium}`}}
               resizeMode="cover"/>
             </View>

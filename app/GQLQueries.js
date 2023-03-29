@@ -2,7 +2,20 @@ import { gql } from "@apollo/client";
 
 export const ARTIST_QUERY = gql`
 query MyQuery {
-    artists {
+    artists (first:5){
+      slug
+      name
+      mainPhoto {
+        url
+      }
+      rating
+      bookingPrice
+    }
+  }
+`;  
+export const ALLARTIST_QUERY = gql`
+query MyQuery {
+    artists (first:20){
       slug
       name
       mainPhoto {
@@ -42,7 +55,7 @@ query MyQuery ($slug: String){
 
   export const EVENT_QUERY = gql`
   query EventQuery {
-    events {
+    events (first:3) {
       slug
       title
       poster {
@@ -59,7 +72,28 @@ query MyQuery ($slug: String){
       }
     }
   }
-  `;  
+  `; 
+   
+  export const ALLEVENT_QUERY = gql`
+  query EventQuery {
+    events (first:5) {
+      slug
+      title
+      poster {
+        url
+      }
+      artist {
+        ... on Artist {
+          id
+          name
+          mainPhoto {
+            url
+          }
+        }
+      }
+    }
+  }
+  `; 
 
   export const EVENT_DETAILS = gql `
 query EventDQuery ($slug: String){

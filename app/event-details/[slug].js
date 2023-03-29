@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native"
 import EventINDetails from "../../components/Events/components/EventINDetails";
 import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
 import {GRAPHQL_CMS_API} from '@env'
+import Backbtn from "../../components/Basiclayout/Backbtn";
 
 
 // Initialize Apollo Client
@@ -23,8 +24,11 @@ const EventDetails = () => {
 
       <Stack.Screen
       options={{
-        headerTitle:"Event details",
-        headerTransparent:true        
+        headerTitle:"",
+        headerTransparent:true     ,
+        headerLeft: () => (
+          <Backbtn />
+        )   
       }}/>
       <ApolloProvider client={client}>
       <EventINDetails params={params.slug}/>
