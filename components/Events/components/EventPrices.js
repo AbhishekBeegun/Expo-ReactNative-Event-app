@@ -12,20 +12,20 @@ const EventPrices = ({nrml,vip,elite}) => {
           </Text>
         </View>
 
-      <View className="px-8 bg-slate-700">
+      <View className="px-8">
 
-        <View className="w-full flex flex-row items-center py-2 gap-5">
+        <View className="w-full flex flex-row items-center justify-between py-2 gap-5">
         <Text className="font-semibold text-white">Normal tickets</Text>
         <Text className="text-green-300 font-semibold">Rs {nrml}</Text>
       
         </View>
 
-        <View className="w-full flex flex-row items-center py-2 gap-5">
+        <View className="w-full flex flex-row items-center justify-between py-2 gap-5">
         <Text className="font-semibold text-white">VIP tickets</Text>
         <Text className="text-green-300 font-semibold">Rs {vip}</Text>
         </View>
 
-        <View className="w-full flex flex-row items-center py-2 gap-5">
+        <View className="w-full flex flex-row items-center justify-between py-2 gap-5">
         <Text className="font-semibold text-white">VVIIIPP tickets</Text>
         <Text className="text-green-300 font-semibold">Rs {elite}</Text>
         </View>

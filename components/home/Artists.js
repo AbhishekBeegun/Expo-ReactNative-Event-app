@@ -4,6 +4,7 @@ import ArtistCard from "../Artists/ArtistCard"
 
 import { useQuery } from "@apollo/client"
 import { ARTIST_QUERY } from "../../app/GQLQueries"
+import { TouchableOpacity } from "react-native-gesture-handler"
 
 const Artists = () => {
 
@@ -11,8 +12,14 @@ const Artists = () => {
 
   return (
     <View className="bg-black">
-        <Text className="text-white">Artist Available-----</Text>
+        <View className="flex flex-row justify-between items-baseline px-2 py-4">
+        <Text className="text-white font-bold text-2xl">Featured Artists</Text>
 
+        
+        <TouchableOpacity>
+        <Text className="text-white font-semibold text-[8px] uppercase">Show all</Text>
+        </TouchableOpacity>
+        </View>
         {data && data.artists ?   
 
         <FlatList
