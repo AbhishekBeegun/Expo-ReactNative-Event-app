@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Text,View,TouchableOpacity,Modal} from "react-native"
+import { useRouter } from "expo-router"
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import EventLocation from "./EventLocation";
 
 
 const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
+
+  const router = useRouter()
+
+
   const [Showmore, setShowmore] = useState(true)
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -13,19 +18,38 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
 
   const qty = [1 , 2 , 3 , 4 , 5 ]
 
-  const total = 600 * 2 
+  const [selectPrice, setselectPrice] = useState()
+  const [selectQTY, setselectQTY] = useState()
+  const [IsPriceSelected, setIsPriceSelected] = useState(false)
+  const [IsQtySelected, setIsQtySelected] = useState(false)
+
+
+  
 
   function selectedPrice(price){
     console.log(price)
+    setselectPrice(price)
+    setIsPriceSelected(true)
   }
   function selectedQTY(qty){
     console.log(qty)
+    setselectQTY(qty)
+    setIsQtySelected(true)
+ 
   }
+
+  const total = selectPrice * selectQTY
 
 
   function showmorebtn(){
     setShowmore(!Showmore);
   }
+
+
+  const handleCheckout = () => {
+    router.push("/checkout");  
+  }
+
   return (
     <View className="px-2 bg-black">
         <View className="flex flex-row justify-center py-4 gap-8">
@@ -38,52 +62,72 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
           setModalVisible(!modalVisible);
         }}>
         <View className="flex flex-col justify-center items-center h-screen w-screen">
-          <View className="bg-black h-64 w-[95vw] rounded-lg">
 
-            <Text className="text-white font-semibold py-2 px-2">Choose your ticket</Text>
+          {/* inside modal */}
+          <View className="bg-black flex flex-col justify-between h-[350px] w-[95vw] rounded-lg py-4">
+
+            <View className="flex flex-row justify-between items-center px-4  ">
+            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <Ionicons name="ios-arrow-back-circle-sharp" size={35} color="white" />
+            </TouchableOpacity>
+
+            <Text className="text-white font-semibold py-2 px-2">Choose your tickets</Text>
+            </View>
+
             
             {/* prices of tickets */}
-            <View className="flex flex-row flex-wrap gap-4">
+
+            <View className="flex flex-col gap-3">           
+            <View className="flex flex-row gap-4 justify-evenly">
             {prices.map( (item) => (
             
-            <TouchableOpacity onPress={() => selectedPrice(item)} 
+            <TouchableOpacity
+             onPress={() => selectedPrice(item)} 
             key={item} 
-            className="border border-white py-2 px-6 rounded-full items-center">
-            <Text className="text-white">Rs {item}</Text>
+            className="bg-yellow-300 py-2 px-4 rounded-full items-center active:bg-yellow-200">
+            <Text className="text-black font-semibold">Rs {item}</Text>
             </TouchableOpacity>
             ) )}
             </View>
+            <Text className="text-white text-xs font-semibold py-2 px-4">Selected Ticket : Rs {selectPrice} </Text>
 
-              <Text className="text-white text-lg">X</Text>
+            </View>
 
               
             {/* QTY of tickets */}
 
+            <View className="flex flex-col gap-3">
+
             <View className="flex flex-row justify-evenly gap-4">            
             {qty.map( (item) => (
-            <TouchableOpacity onPress={() => selectedQTY(item)}
+            <TouchableOpacity 
+            onPress={() => selectedQTY(item)}
             key={item} 
-            className="border border-white py-2 px-4 rounded-full items-center">
+            className="border border-white py-2 px-4 rounded-lg items-center active:bg-white">
             <Text className="text-white">{item}</Text>
             </TouchableOpacity>
             ) )}
             </View>
 
+            <Text className="text-white text-xs font-semibold py-2 px-4">Quantity : {selectQTY} </Text>
 
-            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-            <Text className="text-white" >close btn!</Text>
+
+            </View>
+
+            {/* total and checkouit */}
+
+            {IsPriceSelected && IsQtySelected ?
+            <View className="flex flex-row justify-between px-8 items-center">
+            <Text className="text-white text-xs font-semibold">TOTAL : Rs {total}</Text>
+            <TouchableOpacity onPress={() => handleCheckout()}>
+            <Ionicons name="arrow-forward-circle-sharp" size={40} color="yellow" />
             </TouchableOpacity>
+            </View>
+            : <Text className="text-white text-xs font-semibold uppercase m-auto">Select Both options above to continue</Text>         
+            }
           </View>
         </View>
       </Modal>
-
-
-
-
-
-
-
-
          
          <TouchableOpacity>
          <View className="border border-white px-8 py-2 rounded-full">

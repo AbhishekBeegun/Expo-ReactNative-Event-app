@@ -22,7 +22,6 @@ const EventINDetails = ({params}) => {
     
     {data && data.event ? 
     <View>
-
     <Header poster={data.event.poster}
     title={data.event.title}
     location={data.event.locationTitle}
