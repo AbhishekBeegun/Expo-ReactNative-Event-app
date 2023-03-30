@@ -1,12 +1,14 @@
 import React from 'react'
 import { Stack,useRouter } from "expo-router";
 import { Text , View,SafeAreaView, ScrollView,FlatList } from "react-native"
-import HeaderBanner from "../components/home/HeaderBanner";
+// import HeaderBanner from "../components/home/HeaderBanner";
 import Artists from "../components/home/Artists";
 import Events from "../components/home/Events";
 import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/client';
 import {GRAPHQL_CMS_API} from '@env'
 import LocalArtists from "../components/home/LocalTalents";
+import Greet from "../components/greeting/Greet";
+import Setiing from "../components/Settings/Setiing";
 
 // Initialize Apollo Client
 const client = new ApolloClient({
@@ -22,16 +24,24 @@ const index = () => {
 
       <Stack.Screen
       options={{
-        headerTitle:" Event App",
-        headerTransparent:true        
+        headerTitle:"",
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerLeft :() => (
+          <Greet />
+        ),
+        headerRight: () => (
+          <Setiing/>
+        )
       }}/>
 
       <ScrollView>
-        <HeaderBanner/>
+        {/* <HeaderBanner/> */}
 
         <ApolloProvider client={client}>
 
-        {/* <LocalArtists/> */}
+        <LocalArtists/>
         <Artists/>   
 
         <Events/> 

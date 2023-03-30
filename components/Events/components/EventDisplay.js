@@ -11,7 +11,7 @@ const EventDisplay = ({artist}) => {
         {artist.map((item) => (
           <View key={item.id} className="bg-black px-2">
 
-        <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+        <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
           <Text className="font-semibold text-white">Main artist</Text>   
         </View>
 
@@ -34,7 +34,7 @@ const EventDisplay = ({artist}) => {
 
        <View className="rounded-lg py-4">
        
-       <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+       <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
         <Text className="font-semibold text-white">Video</Text>   
         </View>
         <View className="w-full">

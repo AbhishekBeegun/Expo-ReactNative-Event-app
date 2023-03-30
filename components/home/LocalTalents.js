@@ -16,9 +16,9 @@ const LocalArtists = () => {
         <Text className="text-white font-bold text-2xl">Local Talents</Text>
 
         
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
         <Text className="text-white font-semibold text-[8px] uppercase">Show all</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         </View>
         {data && data.artists ?   
 

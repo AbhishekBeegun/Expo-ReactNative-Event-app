@@ -1,21 +1,21 @@
 import React from 'react'
-import { Text,View,Image,TouchableOpacity } from "react-native"
+import { Text,View,Image,TouchableOpacity, ImageBackground } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
-
-
 const Header = ({coverPhoto, MainPhoto,name,rating,location,minprice,maxprice}) => {
 
 
   return (
     <View className="h-[40vh] w-full m-auto bg-black">
 
-      <Image className="h-full w-full bg-black opacity-80" 
+      <Image 
+      className="h-full w-full opacity-80" 
       source={{         
         uri : `${coverPhoto.url}`
       }}/>
-        
-        <View className="absolute bottom-0 left-0 flex flex-row h-[100px] w-full items-center justify-center">
+    
 
+        <View className="absolute bottom-0 left-0 flex flex-row h-[100px] w-full items-center justify-center">
+            
           {/* artist image */}
           <View className="h-[90px] w-[90px]">
            <Image

@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 
 export const LOCALARTIST_QUERY = gql`
 query MyQuery {
-  artists(where: {localArtist: true}) {
+  artists(where: {localArtist: true}, orderBy: createdAt_DESC) {
     slug
     name
     mainPhoto {

@@ -25,7 +25,7 @@ const About = ({artistDescription}) => {
           </TouchableOpacity>
 
           <TouchableOpacity>
-           <View className="bg-yellow-300 px-8 py-2 rounded-full">
+           <View className="bg-yellow-400 px-8 py-2 rounded-full">
               <Text className="text-black font-semibold">Book</Text>              
            </View>
           </TouchableOpacity>

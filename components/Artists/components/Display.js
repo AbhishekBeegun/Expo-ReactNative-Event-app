@@ -11,7 +11,7 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
     <View className="px-2 py-4 bg-black">
       {/* photos */}
       <View className="rounded-lg ">
-        <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+        <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
         <Text className="font-semibold text-white">Photos</Text>   
         </View>
 
@@ -31,7 +31,7 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
            {/* video */}
         <View className="rounded-lg py-4 ">
        
-        <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+        <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
          <Text className="font-semibold text-white">Video</Text>   
          </View>
          <View className="w-full">
@@ -56,7 +56,7 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
       {/* music */}
       <View className="rounded-lg py-4 ">
        
-       <View className="px-4 py-2 bg-gray-800 rounded-t-lg">
+       <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
         <Text className="font-semibold text-white">Music</Text>   
         {/* <Text className="font-semibold text-xs text-slate-700">SetTimout = 15 sec</Text>  */}
        </View>

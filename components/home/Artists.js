@@ -4,9 +4,12 @@ import ArtistCard from "../Artists/ArtistCard"
 
 import { useQuery } from "@apollo/client"
 import { ARTIST_QUERY } from "../../app/GQLQueries"
-import { TouchableOpacity } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native"
+import { useRouter } from "expo-router"
 
 const Artists = () => {
+
+  const router = useRouter()
 
   const {data} = useQuery(ARTIST_QUERY);
 
@@ -16,7 +19,7 @@ const Artists = () => {
         <Text className="text-white font-bold text-2xl">Featured Artists</Text>
 
         
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/allartists")}>
         <Text className="text-white font-semibold text-[8px] uppercase">Show all</Text>
         </TouchableOpacity>
         </View>
@@ -39,13 +42,6 @@ const Artists = () => {
         : <ActivityIndicator size={50}>
         </ActivityIndicator>
         }
-
-  
-
-
-        <ScrollView>
-
-        </ScrollView>
     </View>
   )
 }

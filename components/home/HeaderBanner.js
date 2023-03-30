@@ -1,35 +1,19 @@
 import React from 'react'
-import { Text,View,TouchableNativeFeedback,StyleSheet } from "react-native"
+import { Text,View} from "react-native"
+import { Ionicons } from '@expo/vector-icons';
+import Greet from "../greeting/Greet";
+import { TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 const HeaderBanner = () => {
+  const router = useRouter()
   return (
-    <View className="bg-black flex flex-col gap-5 justify-center items-center p-10 pt-32">
-        <Text className="text-3xl text-yellow-300 font-semibold">Start booking artists.</Text>
-        <Text className="text-gray-500">BeatGig is the easiest 
-          way to book talent for private
-         parties, colleges, bars, weddings
-          & more.
-        </Text>
+    <View className="bg-black flex flex-row gap-2 justify-between px-4 items-baseline pt-16 pb-5">
+      <Greet/>
 
-       <View className="flex flex-row justify-center gap-5">
-        <View>
-        <TouchableNativeFeedback>
-          <View className="bg-white px-4 py-2 rounded-full">
-          <Text className="text-black font-semibold">Sign up</Text>
-          </View>
-        </TouchableNativeFeedback>
-        </View>
-
-
-        <View>
-        <TouchableNativeFeedback>     
-          <View className="bg-gray-600 px-4 py-2 rounded-full"> 
-          <Text className="text-white font-semibold">Learn more</Text>
-          </View>
-        </TouchableNativeFeedback>
-        </View>
-        </View>
-        
+      <TouchableOpacity onPress={ () => {router.push('/settings')} }>
+      <Ionicons name="ios-settings-outline" size={30} color="white" />    
+      </TouchableOpacity>
 
     </View>
   )
