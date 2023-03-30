@@ -14,6 +14,19 @@ query MyQuery {
 }
 `; 
 
+export const SEARCHARTIST_QUERY = gql`
+query MyQuery($searchinput: String) {
+  artists(where: {name_contains: $searchinput}) {
+         slug
+      name
+      mainPhoto {
+        url
+      }
+      rating
+  }
+}
+`;
+
 export const ARTIST_QUERY = gql`
 query MyQuery {
     artists (first:5){

@@ -29,7 +29,7 @@ const Allartist = () => {
          keyExtractor={item => item.slug}
         /> 
         : 
-        <View className="h-screen w-screen">       
+        <View className="h-[100vh] w-screen flex flex-row justify-center items-center">       
         <ActivityIndicator size={50}>
         </ActivityIndicator>
         </View>

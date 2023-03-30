@@ -8,7 +8,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider ,HttpLink } from '@apollo/c
 import {GRAPHQL_CMS_API} from '@env'
 import LocalArtists from "../components/home/LocalTalents";
 import Greet from "../components/greeting/Greet";
-import Setiing from "../components/Settings/Setiing";
+import Setiing from "../components/Settings/Setiing"
+import SearchQ from "../components/Search/SearchQ";
 
 // Initialize Apollo Client
 const client = new ApolloClient({
@@ -41,6 +42,8 @@ const index = () => {
 
         <ApolloProvider client={client}>
 
+    
+        <SearchQ />
         <LocalArtists/>
         <Artists/>   
 
@@ -51,6 +54,7 @@ const index = () => {
 
 
       </ScrollView>
+
 
 
     </SafeAreaView>

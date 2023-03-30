@@ -26,8 +26,6 @@ const Allartists = () => {
         )   
       }}/>
         <ApolloProvider client={client}>
-        
-
             <Allartist />
         </ApolloProvider>
 
