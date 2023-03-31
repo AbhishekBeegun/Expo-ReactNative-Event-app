@@ -6,7 +6,7 @@ const EventPrices = ({nrml,vip,elite}) => {
 
   return (
     <View className="px-2 py-4 bg-black">
-        <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
+        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
           <Text className="font-semibold text-white">
             Ticket Prices
           </Text>

@@ -84,8 +84,8 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
             <TouchableOpacity
              onPress={() => selectedPrice(item)} 
             key={item} 
-            className="bg-yellow-400 py-2 px-4 rounded-full items-center active:bg-yellow-200">
-            <Text className="text-black font-semibold">Rs {item}</Text>
+            className="bg-gray-700 py-2 px-4 rounded-full items-center active:bg-yellow-200">
+            <Text className="text-white font-semibold">Rs {item}</Text>
             </TouchableOpacity>
             ) )}
             </View>
@@ -137,8 +137,8 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
 
          <TouchableOpacity
          onPress={() => setModalVisible(!modalVisible)}>
-          <View className="bg-yellow-400 px-8 py-2 rounded-full">
-             <Text className="text-black font-semibold">Buy ticket</Text>              
+          <View className="bg-gray-700 px-8 py-2 rounded-full">
+             <Text className="text-white font-semibold">Buy ticket</Text>              
           </View>
          </TouchableOpacity>
        </View>
@@ -165,7 +165,7 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
     </TouchableOpacity>
 
     <View className="w-full pt-4">
-    <View className="px-4 py-2 bg-yellow-400 rounded-t-lg">
+    <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
           <Text className="font-semibold text-white">
             Event location
           </Text>
