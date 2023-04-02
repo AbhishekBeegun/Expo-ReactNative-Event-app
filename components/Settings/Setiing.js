@@ -8,7 +8,7 @@ const Setiing = () => {
     const router = useRouter()
 
   return (
-    <View>
+    <View className="px-4">
       <TouchableOpacity onPress={ () => {router.push('/settings')} }>
       <Ionicons name="ios-settings-outline" size={25} color="white" />    
       </TouchableOpacity>

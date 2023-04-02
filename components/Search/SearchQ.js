@@ -21,7 +21,8 @@ const SearchQ = () => {
       
       <View className="w-full flex flex-row gap-2 items-center justify-evenly">
       <TextInput style={{fontFamily : "SPOTFONT"}}
-      className="px-4 py-1 rounded-lg w-3/4 border bg-white font-bold"
+      autoFocus
+      className="px-4 py-1 rounded-lg w-3/4 bg-yellow-400"
       placeholder="Looking for . . ."
         onChangeText={setinput}
         value={input}
@@ -31,7 +32,7 @@ const SearchQ = () => {
       <Ionicons name="search" size={24} color="black" />       
      </TouchableOpacity>
      </View>
-
+     {/* for search between artist or events */}
      {/* <View className="flex flex-row justify-around w-screen py-2">
       <TouchableOpacity 
       className="py-1 px-4 bg-gray-700 rounded-full">

@@ -15,7 +15,8 @@ const SearchResult = ({params}) => {
 
   return (
     <View className="bg-black h-[110vh] flex flex-col items-center pt-14">
-        <Text className="text-white font-semibold text-xl">Result for {params}</Text>
+        <Text style={{fontFamily : "SPOTFONT"}}
+        className="text-white font-semibold text-xl">Result for {params}</Text>
     
     {data && data.artists ?   
 

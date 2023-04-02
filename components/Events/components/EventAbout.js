@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Text,View,TouchableOpacity,Modal} from "react-native"
+import { Text,View,TouchableOpacity,Modal,ToastAndroid} from "react-native"
 import { useRouter } from "expo-router"
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,9 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
 
   const router = useRouter()
 
-
+  function showToast() {
+    ToastAndroid.show('Wishlist Not Setup', ToastAndroid.SHORT);
+  }
   const [Showmore, setShowmore] = useState(true)
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -136,9 +138,9 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
         </View>
       </Modal>
          
-         <TouchableOpacity>
-         <View className="border border-white px-3 py-2 rounded-lg">
-           <Ionicons name="ios-heart" size={20} color="red" />
+         <TouchableOpacity onPress={() => showToast()}>
+         <View className="px-3 py-2 rounded-lg">
+           <Ionicons name="ios-heart" size={25} color="red" />
          </View>
          </TouchableOpacity>
 

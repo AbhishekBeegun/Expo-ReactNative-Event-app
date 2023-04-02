@@ -19,7 +19,8 @@ const UserProfile = () => {
 <View className="flex flex-col justify-evenly px-8">
 {/* user name */}
  <View>
-  <Text className="text-xl font-semibold text-white">User Name</Text>
+  <Text style={{fontFamily : "SPOTFONT"}}  
+  className="text-xl font-semibold text-white">Username</Text>
  </View>
 </View>
 

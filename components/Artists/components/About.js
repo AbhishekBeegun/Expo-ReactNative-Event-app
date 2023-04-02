@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import { Text,View,TouchableOpacity} from "react-native"
+import { Text,View,TouchableOpacity,ToastAndroid} from "react-native"
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Linking } from "react-native";
@@ -8,6 +8,10 @@ import { Linking } from "react-native";
 
 const About = ({artistDescription,name}) => {
   const [Showmore, setShowmore] = useState(true)
+
+  function showToast() {
+    ToastAndroid.show('Wishlist Not Setup', ToastAndroid.SHORT);
+  }
 
   function showmorebtn(){
     setShowmore(!Showmore);
@@ -23,9 +27,9 @@ function handleBook(name) {
         {/* like heart or book artist */}
         <View className="flex flex-row justify-center py-4 gap-8">
          
-          <TouchableOpacity>
-          <View className="border border-white px-3 py-2 rounded-lg">
-            <Ionicons name="ios-heart" size={20} color="red" />
+          <TouchableOpacity onPress={() => showToast()}>
+          <View className="px-3 py-2 rounded-lg">
+            <Ionicons name="ios-heart" size={25} color="red" />
           </View>
           </TouchableOpacity>
 

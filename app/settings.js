@@ -13,19 +13,13 @@ const Settings = () => {
       options={{
         headerTitle:"Settings",
         headerTintColor: 'white',
-
         headerStyle: {
           backgroundColor: 'black',
         },       
         headerTitleAlign : "center", 
         headerLeft:() => (
         <Backbtn/>
-        )
-
-
-        
-
-              
+        )              
       }}/>
         <UserProfile/>
         <About/>

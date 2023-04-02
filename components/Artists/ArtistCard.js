@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text,View,TouchableOpacity ,Image} from "react-native"
+import { Text,View,TouchableOpacity ,Image,ToastAndroid} from "react-native"
 import { useRouter } from "expo-router"
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,6 +7,9 @@ import { Ionicons } from '@expo/vector-icons';
 const ArtistCard = ({item}) => {
 
   const router = useRouter()
+  function showToast() {
+    ToastAndroid.show('Wishlist Not Setup', ToastAndroid.SHORT);
+  }
 
   const handleCardPress = () => {
     router.push(`/artist-details/${item.slug}`);  
@@ -32,7 +35,7 @@ const ArtistCard = ({item}) => {
 
               <View>
                 {/* add to favorite */}
-               <TouchableOpacity>
+               <TouchableOpacity onPress={() => showToast()}>
                 <Ionicons name="ios-heart" size={20} color="red" />
                </TouchableOpacity>
               </View>

@@ -28,7 +28,7 @@ const EventDisplay = ({artist}) => {
 
           <View>
             <Text style={{fontFamily : "SPOTFONT"}} 
-            className="text-xl font-semibold text-white">{item.name}</Text>
+            className="text-base font-semibold text-white">{item.name}</Text>
            </View>
 
            </View>

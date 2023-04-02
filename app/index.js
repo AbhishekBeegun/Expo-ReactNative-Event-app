@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState } from "react";
 import { Stack,useRouter } from "expo-router";
-import { Text , View,SafeAreaView, ScrollView,FlatList } from "react-native"
+import { Ionicons } from '@expo/vector-icons';
+import { Text , View,SafeAreaView, ScrollView,FlatList,TouchableOpacity } from "react-native"
 // import HeaderBanner from "../components/home/HeaderBanner";
 import Artists from "../components/home/Artists";
 import Events from "../components/home/Events";
@@ -20,6 +22,11 @@ const client = new ApolloClient({
 
 
 const index = () => {
+
+  const [showSearchBar, setshowSearchBar] = useState(false)
+  function handlePress(){
+    setshowSearchBar(!showSearchBar)
+}
   return (
     <SafeAreaView>
 
@@ -33,7 +40,14 @@ const index = () => {
           <Greet />
         ),
         headerRight: () => (
-          <Setiing/>
+          <>
+          <View>
+           <TouchableOpacity onPress={() => handlePress()}>
+           {showSearchBar ? <Ionicons name="close" size={25} color="white" /> : <Ionicons name="search" size={25} color="white"/>}
+           </TouchableOpacity>
+          </View>
+          <Setiing />
+          </>
         )
       }}/>
 
@@ -43,7 +57,7 @@ const index = () => {
         <ApolloProvider client={client}>
 
     
-        <SearchQ />
+        {showSearchBar ? <SearchQ /> : <></>}
         <LocalArtists/>
         <Artists/>   
 

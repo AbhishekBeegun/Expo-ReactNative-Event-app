@@ -11,18 +11,18 @@ const Greet = () => {
 
 useEffect(() => {
     if (hrs < 12)
-    setgreet( 'Good Morning');
+    setgreet( 'Good Morning ☀️');
   else if (hrs >= 12 && hrs <= 17)
-  setgreet( 'Good Afternoon');
+  setgreet( 'Good Afternoon 🌤️');
   else if (hrs >= 17 && hrs <= 24)
-  setgreet( 'Good Evening');
+  setgreet( 'Good Evening 🌑');
 }, [])
 
 
   return (
     <View>
     <Text style={{fontFamily : "SPOTFONT"}}
-    className="font-semibold text-xl text-white px-2">{greet}</Text>
+    className="font-semibold text-xl text-white px-1">{greet}</Text>
     </View>
   )
 }
