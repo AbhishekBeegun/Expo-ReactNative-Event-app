@@ -21,7 +21,8 @@ useEffect(() => {
 
   return (
     <View>
-    <Text className="font-semibold text-2xl text-white px-2">{greet}</Text>
+    <Text style={{fontFamily : "SPOTFONT"}}
+    className="font-semibold text-xl text-white px-2">{greet}</Text>
     </View>
   )
 }

@@ -43,7 +43,8 @@ const EventCard = ({item}) => {
 
 
               {/* EventName */}
-              <Text className="text-white font-semibold text-xl px-2 py-2 shadow-lg">{item.title}</Text>
+              <Text style={{fontFamily : "SPOTFONT"}} 
+              className="text-white font-semibold text-xl px-2 py-2 shadow-lg">{item.title}</Text>
 
             </View>
 

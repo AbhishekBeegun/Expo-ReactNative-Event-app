@@ -3,15 +3,20 @@ import { useState } from "react";
 import { Text,View,TouchableOpacity} from "react-native"
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { Linking } from "react-native";
 
 
-const About = ({artistDescription}) => {
+const About = ({artistDescription,name}) => {
   const [Showmore, setShowmore] = useState(true)
 
   function showmorebtn(){
     setShowmore(!Showmore);
   }
 
+function handleBook(name) {
+    Linking.openURL(`mailto:Abhishekbeegun0642@gmail.com?subject=Quotation for Booking ${name}&body=Need Quote for ${name}`) 
+    title=`${name} Booking` 
+}
 
   return (
     <View className="bg-black">
@@ -19,37 +24,43 @@ const About = ({artistDescription}) => {
         <View className="flex flex-row justify-center py-4 gap-8">
          
           <TouchableOpacity>
-          <View className="border border-white px-8 py-2 rounded-full">
+          <View className="border border-white px-3 py-2 rounded-lg">
             <Ionicons name="ios-heart" size={20} color="red" />
           </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
-           <View className="bg-gray-700 px-8 py-2 rounded-full">
-              <Text className="text-white font-semibold">Book</Text>              
+          <TouchableOpacity onPress={() => handleBook(name)}>
+           <View className="bg-gray-700 px-20 py-3 rounded-full">
+              <Text style={{fontFamily : "SPOTFONT"}} 
+              className="text-white font-semibold">Book</Text>              
            </View>
           </TouchableOpacity>
         </View>
 
         {/* about section */}
         <View className="px-4">
-          <Text className="text-lg font-semibold text-white">About</Text>
+          <Text style={{fontFamily : "SPOTFONT"}} 
+          className="text-lg font-semibold text-white">About</Text>
           {Showmore ? 
           <View className="w-full h-[8vh] overflow-hidden">
-            <Text className="text-gray-400 text-xs">{artistDescription}</Text>
+            <Text style={{fontFamily : "SPOTFONT"}} 
+            className="text-gray-400 text-xs">{artistDescription}</Text>
           </View> :
            <View className="w-full h-auto overflow-hidden">
-             <Text className="text-gray-400 text-xs">{artistDescription}</Text>
+             <Text style={{fontFamily : "SPOTFONT"}} 
+             className="text-gray-400 text-xs">{artistDescription}</Text>
            </View>}
 
 
           <TouchableOpacity onPress={() => showmorebtn()}>
                 {Showmore ? <View className="flex flex-row items-center justify-center py-2 gap-2">
-                <Text className="font-semibold text-white">Show more</Text>
+                <Text style={{fontFamily : "SPOTFONT"}}
+                className="font-semibold text-white">Show more</Text>
                 <AntDesign name="down" size={12} color="white" />
                 </View>:
                 <View className="flex flex-row items-center justify-center gap-2">
-                <Text className="font-semibold text-white">Show less</Text>
+                <Text style={{fontFamily : "SPOTFONT"}} 
+                className="font-semibold text-white">Show less</Text>
                 <AntDesign name="up" size={12} color="white" />
                 </View>}
 

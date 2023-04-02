@@ -12,7 +12,8 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
       {/* photos */}
       <View className="rounded-lg ">
         <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
-        <Text className="font-semibold text-white">Photos</Text>   
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="font-semibold text-white">Photos</Text>   
         </View>
 
       <ScrollView contentContainerStyle={{flexDirection : "row" ,flexWrap :"wrap"}} >
@@ -32,7 +33,8 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
         <View className="rounded-lg py-4 ">
        
         <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
-         <Text className="font-semibold text-white">Video</Text>   
+         <Text style={{fontFamily : "SPOTFONT"}} 
+         className="font-semibold text-white">Video</Text>   
          </View>
          <View className="w-full">
           <YoutubeIframe
@@ -57,7 +59,8 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
       <View className="rounded-lg py-4 ">
        
        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
-        <Text className="font-semibold text-white">Music</Text>   
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="font-semibold text-white">Music</Text>   
         {/* <Text className="font-semibold text-xs text-slate-700">SetTimout = 15 sec</Text>  */}
        </View>
 

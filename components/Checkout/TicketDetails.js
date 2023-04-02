@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View,Text, SafeAreaView, Image, ScrollView } from "react-native"
+import { View,Text, Image, ScrollView } from "react-native"
 import QRCode from "react-native-qrcode-svg"
 
 const TicketDetails = () => {
@@ -13,10 +13,14 @@ const TicketDetails = () => {
     
     <View className="flex flex-col items-center gap-2 py-8 px-5">
 
-      <Text className="text-xl text-white font-semibold uppercase">Afro love by tayc</Text>
-      <Text className="text-xs text-slate-500">Stade Gremondo bamboo</Text>
-      <Text className="text-white font-bold">2023 / 04 / 18 </Text>
-      <Text className="text-xs text-slate-500">Do not share this with anyone. Kindly please take a screenshot and present this at the entrance.</Text>
+      <Text style={{fontFamily : "SPOTFONT"}} 
+      className="text-xl text-white font-semibold uppercase">Afro love by tayc</Text>
+      <Text style={{fontFamily : "SPOTFONT"}}
+      className="text-xs text-slate-500">Stade Gremondo bamboo</Text>
+      <Text style={{fontFamily : "SPOTFONT"}} 
+      className="text-white font-bold">2023 / 04 / 18 </Text>
+      <Text style={{fontFamily : "SPOTFONT"}} 
+      className="text-xs text-slate-500">Do not share this with anyone. Kindly please take a screenshot and present this at the entrance.</Text>
 
 
 

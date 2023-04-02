@@ -25,7 +25,8 @@ const ArtistCard = ({item}) => {
             <View className="flex flex-row justify-between items-center p-2">
               {/* rating */}
               <View className="flex flex-row items-center justify-center gap-1">
-              <Text className="text-sm font-semibold text-white">{item.rating}</Text>
+              <Text style={{fontFamily : "SPOTFONT"}} 
+              className="text-sm text-white">{item.rating}</Text>
               <FontAwesome name="star" size={15} color="gold"  />
               </View>
 
@@ -38,7 +39,8 @@ const ArtistCard = ({item}) => {
 
             </View>
              {/* ArtistName */}
-            <Text className="text-white font-semibold text-xl px-2 py-2">{item.name}</Text>
+            <Text style={{fontFamily : "SPOTFONT"}} 
+            className="text-white font-semibold text-xl px-2 py-2">{item.name}</Text>
              
           </View>
         </TouchableOpacity>

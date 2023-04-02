@@ -80,7 +80,8 @@ const DeezerPlaylist = ({deezerID}) => {
               resizeMode="cover"/>
             </View>
 
-            <Text className="text-white font-semibold text-xs">{item.title}</Text>
+            <Text style={{fontFamily : "SPOTFONT"}} 
+            className="text-white font-semibold text-xs">{item.title}</Text>
               {isPlaying ? 
               <MaterialIcons name="play-disabled" size={15} color="white"/>      
                :<FontAwesome name="play" size={13} color="white" />      

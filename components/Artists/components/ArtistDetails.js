@@ -30,7 +30,8 @@ const ArtistDetails = ({params}) => {
         maxprice={data.artist.maxPrice}
         />
 
-        <About artistDescription={data.artist.artistDescription}
+        <About name={data.artist.name} 
+        artistDescription={data.artist.artistDescription}
         />
 
         <Socials instagram={data.artist.socialLinks}

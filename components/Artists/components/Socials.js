@@ -27,7 +27,8 @@ function instagramprofile(){
       <View>
        
         <View className="flex flex-row items-center justify-between px-4 py-2 bg-gray-700 rounded-t-lg">
-          <Text className="font-semibold text-white">Reviews</Text>
+          <Text style={{fontFamily : "SPOTFONT"}} 
+          className="font-semibold text-white">Reviews</Text>
           <View className="flex flex-row gap-2 items-center">
           {Stars}
           </View>

@@ -13,7 +13,8 @@ const LocalArtists = () => {
   return (
     <View className="bg-black">
         <View className="flex flex-row justify-between items-baseline px-2 py-4">
-        <Text className="text-white font-bold text-2xl">Local Talents</Text>
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="text-white text-2xl">Local Talents</Text>
 
         
         {/* <TouchableOpacity>

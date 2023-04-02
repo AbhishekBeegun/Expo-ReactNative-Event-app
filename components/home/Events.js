@@ -13,9 +13,11 @@ const Events = () => {
   return (
     <View className="py-4 bg-black">
         <View className="flex flex-row justify-between items-baseline px-2 py-4">
-        <Text className="text-white font-bold text-2xl">Upcoming Events</Text>
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="text-white text-2xl">Upcoming Events</Text>
         <TouchableOpacity>
-        <Text className="text-white font-semibold text-[8px] uppercase">Show all</Text>
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="text-white font-semibold text-[8px] uppercase">Show all</Text>
         </TouchableOpacity>
         </View>
 

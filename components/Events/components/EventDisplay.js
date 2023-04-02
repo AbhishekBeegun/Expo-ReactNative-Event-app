@@ -12,7 +12,8 @@ const EventDisplay = ({artist}) => {
           <View key={item.id} className="bg-black px-2">
 
         <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
-          <Text className="font-semibold text-white">Main artist</Text>   
+          <Text style={{fontFamily : "SPOTFONT"}} 
+          className="font-semibold text-white">Main artist</Text>   
         </View>
 
           <View className="flex flex-row justify-between items-center px-10 py-4">
@@ -26,7 +27,8 @@ const EventDisplay = ({artist}) => {
           </View>
 
           <View>
-            <Text className="text-xl font-semibold text-white">{item.name}</Text>
+            <Text style={{fontFamily : "SPOTFONT"}} 
+            className="text-xl font-semibold text-white">{item.name}</Text>
            </View>
 
            </View>
@@ -35,7 +37,8 @@ const EventDisplay = ({artist}) => {
        <View className="rounded-lg py-4">
        
        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
-        <Text className="font-semibold text-white">Video</Text>   
+        <Text style={{fontFamily : "SPOTFONT"}} 
+        className="font-semibold text-white">Video</Text>   
         </View>
         <View className="w-full">
          <YoutubeIframe
