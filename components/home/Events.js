@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text,View,FlatList,ActivityIndicator } from "react-native"
+import { useRouter } from "expo-router"
 import EventCard from "../Events/EventCard"
 import { useQuery } from "@apollo/client"
 import { EVENT_QUERY } from "../../app/GQLQueries"
@@ -7,15 +8,16 @@ import { TouchableOpacity } from "react-native-gesture-handler"
 
 const Events = () => {
 
-  const {data} = useQuery(EVENT_QUERY);
+  const router = useRouter()
 
+  const {data} = useQuery(EVENT_QUERY);
 
   return (
     <View className="py-4 bg-black">
         <View className="flex flex-row justify-between items-baseline px-2 py-4">
         <Text style={{fontFamily : "SPOTFONT"}} 
         className="text-white text-2xl">Upcoming Events</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/allevents")}>
         <Text style={{fontFamily : "SPOTFONT"}} 
         className="text-white font-semibold text-[8px] uppercase">Show all</Text>
         </TouchableOpacity>

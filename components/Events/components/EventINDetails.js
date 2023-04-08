@@ -30,7 +30,7 @@ const EventINDetails = ({params}) => {
     <About description={data.event.eventdescription}
     lat={data.event.location.latitude}
     long={data.event.location.longitude}
-
+    title={data.event.title}
     nrml={data.event.nmltickets}
     vip={data.event.viptickets}
     elite={data.event.abovevip}

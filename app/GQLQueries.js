@@ -81,7 +81,7 @@ query MyQuery ($slug: String){
 
   export const EVENT_QUERY = gql`
   query EventQuery {
-    events (first:3) {
+    events (first:3,orderBy: createdAt_DESC) {
       slug
       title
       poster {
@@ -102,7 +102,7 @@ query MyQuery ($slug: String){
    
   export const ALLEVENT_QUERY = gql`
   query EventQuery {
-    events (first:5) {
+    events (first:5,orderBy: createdAt_DESC) {
       slug
       title
       poster {
@@ -143,6 +143,7 @@ query EventDQuery ($slug: String){
       artist {
         ... on Artist {
           id
+          slug
           name
           videoLinks
           mainPhoto {

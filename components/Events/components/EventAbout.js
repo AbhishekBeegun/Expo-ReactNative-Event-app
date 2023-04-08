@@ -4,9 +4,11 @@ import { useRouter } from "expo-router"
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import EventLocation from "./EventLocation";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
+
+const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
 
   const router = useRouter()
 
@@ -32,11 +34,16 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
     console.log(price)
     setselectPrice(price)
     setIsPriceSelected(true)
+    AsyncStorage.setItem('price',JSON.stringify( price) )
+    ToastAndroid.show('PRice added to localstorage', ToastAndroid.SHORT);
+
   }
   function selectedQTY(qty){
     console.log(qty)
     setselectQTY(qty)
     setIsQtySelected(true)
+    AsyncStorage.setItem('Qty', JSON.stringify(qty) )
+    ToastAndroid.show('Qty added to localstorage', ToastAndroid.SHORT);
  
   }
 
@@ -48,7 +55,10 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
   }
 
 
-  const handleCheckout = () => {
+  const handleCheckout = (title) => {
+
+    AsyncStorage.setItem('Eventname', JSON.stringify(title) )
+
     router.push("/checkout");  
   }
 
@@ -81,7 +91,7 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
             {/* prices of tickets */}
 
             <View className="flex flex-col gap-3">           
-            <View className="flex flex-row gap-4 justify-evenly">
+            <View className="flex flex-row gap-2 justify-evenly">
             {prices.map( (item) => (
             
             <TouchableOpacity
@@ -103,7 +113,7 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
 
             <View className="flex flex-col gap-3">
 
-            <View className="flex flex-row justify-evenly gap-4">            
+            <View className="flex flex-row justify-evenly gap-2">            
             {qty.map( (item) => (
             <TouchableOpacity 
             onPress={() => selectedQTY(item)}
@@ -127,7 +137,7 @@ const EventAbout = ({description,lat,long,nrml,vip,elite}) => {
             <View className="flex flex-row justify-between px-8 items-center">
             <Text style={{fontFamily : "SPOTFONT"}} 
             className="text-white text-xs font-semibold">TOTAL : Rs {total}</Text>
-            <TouchableOpacity onPress={() => handleCheckout()}>
+            <TouchableOpacity onPress={() => handleCheckout(title)}>
             <Ionicons name="arrow-forward-circle-sharp" size={40} color="yellow" />
             </TouchableOpacity>
             </View>

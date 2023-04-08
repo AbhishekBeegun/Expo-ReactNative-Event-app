@@ -1,9 +1,18 @@
 import React from 'react'
-import { Text,View,Image } from "react-native"
+import { Text,View,Image,TouchableOpacity } from "react-native"
+import { useRouter } from "expo-router"
+
 import YoutubeIframe from "react-native-youtube-iframe"
 
 
 const EventDisplay = ({artist}) => {
+
+  const router = useRouter()
+  console.log(artist[0].slug)
+
+  const handlePress = () => {
+    router.push(`/event-details/${artist[0].slug}`);  
+  }
 
 
   return (
@@ -16,7 +25,7 @@ const EventDisplay = ({artist}) => {
           className="font-semibold text-white">Main artist</Text>   
         </View>
 
-          <View className="flex flex-row justify-between items-center px-10 py-4">
+          <TouchableOpacity onPress={handlePress} className="flex flex-row justify-between items-center px-10 py-4">
 
           <View className="h-[90px] w-[90px]">
            <Image
@@ -31,7 +40,7 @@ const EventDisplay = ({artist}) => {
             className="text-base font-semibold text-white">{item.name}</Text>
            </View>
 
-           </View>
+           </TouchableOpacity>
 {/* endofsdofjsidf */}
 
        <View className="rounded-lg py-4">

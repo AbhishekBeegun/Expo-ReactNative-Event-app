@@ -9,10 +9,12 @@ const About = () => {
 
     <View className="flex flex-col justify-center items-center gap-2">
     <Text style={{fontFamily : "SPOTFONT"}} 
-    className="text-white text-xs">Made using React Native, GraphQL, Expo , HyGraph </Text>
+    className="text-white text-sm">Made using React Native, GraphQL, Expo , HyGraph </Text>
   
     <Text style={{fontFamily : "SPOTFONT"}} 
-    className="text-white text-xs">Similar to Otayo, Beatgig, ShubHub, Spotify </Text>
+    className="text-white text-sm">Similar to Otayo, Beatgig, ShubHub, Spotify </Text>
+        <Text style={{fontFamily : "SPOTFONT"}} 
+    className="text-white text-sm">Need to transfer code to nextjs 14 using the app folder routing === similar to angular file structure. </Text>
     </View>
     </View>
   )

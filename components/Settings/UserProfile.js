@@ -20,7 +20,7 @@ const UserProfile = () => {
 {/* user name */}
  <View>
   <Text style={{fontFamily : "SPOTFONT"}}  
-  className="text-xl font-semibold text-white">Username</Text>
+  className="text-sm font-semibold text-white line-through">Need Auth</Text>
  </View>
 </View>
 
