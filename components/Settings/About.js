@@ -1,20 +1,25 @@
 import React from 'react'
+import { Image } from "react-native"
 import {View, Text } from "react-native"
 
 const About = () => {
   return (
     <View className="bg-black px-2 py-4">
+
+
     <Text style={{fontFamily : "SPOTFONT"}} 
-    className="text-lg font-semibold text-white">About</Text>
+    className="text-lg font-semibold text-white py-4">About</Text>
 
     <View className="flex flex-col justify-center items-center gap-2">
+    <Text style={{fontFamily : "SPOTFONT"}} 
+    className="text-white text-slg">LIVEWIRE </Text>
     <Text style={{fontFamily : "SPOTFONT"}} 
     className="text-white text-sm">Made using React Native, GraphQL, Expo , HyGraph </Text>
   
     <Text style={{fontFamily : "SPOTFONT"}} 
     className="text-white text-sm">Similar to Otayo, Beatgig, ShubHub, Spotify </Text>
         <Text style={{fontFamily : "SPOTFONT"}} 
-    className="text-white text-sm">Need to transfer code to nextjs 14 using the app folder routing === similar to angular file structure. </Text>
+    className="text-white text-sm">Remimder : Need to transfer code to nextjs 14 using the app folder routing === similar to angular file structure. </Text>
     </View>
     </View>
   )
