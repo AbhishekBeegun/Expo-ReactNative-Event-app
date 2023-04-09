@@ -38,7 +38,7 @@ const SearchResult = ({params}) => {
     /> 
     :
     <View className="h-[110vh] w-screen">
-     <ActivityIndicator size={50}>
+     <ActivityIndicator size={50} color={"yellow"}>
      </ActivityIndicator>
     </View>
     }

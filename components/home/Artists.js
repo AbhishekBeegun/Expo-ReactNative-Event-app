@@ -41,7 +41,7 @@ const Artists = () => {
          
          keyExtractor={item => item.slug}
         /> 
-        : <ActivityIndicator size={50}>
+        : <ActivityIndicator size={50} color={"yellow"}>
         </ActivityIndicator>
         }
     </View>

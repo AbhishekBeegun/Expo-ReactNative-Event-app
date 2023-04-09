@@ -4,7 +4,15 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "Expo-Event-app",
-    "slug": "Expo-Event-app"
+    "name": "LiveWire",
+    "slug": "live-wire",
+    "version" : "0.0.1a",
+    "icon" : "./assets/logo.png",
+    "android":{
+      "adaptiveIcon":{
+        "foregroundImage" : "./assets/logo.png",
+        "backgroundColor" : "#ffffff"
+      }
+    }
   }
 }

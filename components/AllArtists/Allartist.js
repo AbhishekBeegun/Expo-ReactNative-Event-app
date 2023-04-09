@@ -30,7 +30,7 @@ const Allartist = () => {
         /> 
         : 
         <View className="h-[100vh] w-screen flex flex-row justify-center items-center">       
-        <ActivityIndicator size={50}>
+        <ActivityIndicator size={50} color={"yellow"}>
         </ActivityIndicator>
         </View>
 
