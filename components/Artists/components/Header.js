@@ -1,20 +1,25 @@
 import React from 'react'
 import { Text,View,Image,TouchableOpacity, ImageBackground } from "react-native"
 import { FontAwesome } from '@expo/vector-icons';
+import {LinearGradient} from "expo-linear-gradient"
 const Header = ({coverPhoto, MainPhoto,name,rating,location,minprice,maxprice}) => {
 
 
   return (
-    <View className="h-[40vh] w-full m-auto bg-black">
+    <View className="h-[40vh] w-full m-auto ">
 
       <Image 
-      className="h-full w-full opacity-80" 
+      className="h-full w-full opacity-95" 
       source={{         
         uri : `${coverPhoto.url}`
       }}/>
     
 
-        <View className="absolute bottom-0 left-0 flex flex-row h-[100px] w-full items-center justify-center">
+        <LinearGradient
+            colors={["#66000000","#000000"]}
+            start={{x:1,y:0 }}
+            end={{x:1,y:1 }} 
+        className="absolute bottom-0 left-0 flex flex-row h-[100px] w-full items-center justify-center ">
             
           {/* artist image */}
           <View className="h-[90px] w-[90px]">
@@ -63,7 +68,7 @@ const Header = ({coverPhoto, MainPhoto,name,rating,location,minprice,maxprice}) 
             </View>
           </View>
 
-        </View>
+        </LinearGradient>
 
         
     </View>

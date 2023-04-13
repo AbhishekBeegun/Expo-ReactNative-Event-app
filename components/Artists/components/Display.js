@@ -11,9 +11,9 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
     <View className="px-2 py-4 bg-black">
       {/* photos */}
       <View className="rounded-lg ">
-        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+        <View className="px-4 py-3 bg-white rounded-t-lg">
         <Text style={{fontFamily : "SPOTFONT"}} 
-        className="font-semibold text-white">Photos</Text>   
+        className="font-semibold text-black">Photos</Text>   
         </View>
 
       <ScrollView contentContainerStyle={{flexDirection : "row" ,flexWrap :"wrap"}} >
@@ -32,9 +32,9 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
            {/* video */}
         <View className="rounded-lg py-4 ">
        
-        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+        <View className="px-4 py-3 bg-white rounded-t-lg">
          <Text style={{fontFamily : "SPOTFONT"}} 
-         className="font-semibold text-white">Video</Text>   
+         className="font-semibold text-black">Video</Text>   
          </View>
          <View className="w-full">
           <YoutubeIframe
@@ -58,9 +58,12 @@ const Display = ({gridfoto,videoLinks,deezerID}) => {
       {/* music */}
       <View className="rounded-lg py-4 ">
        
-       <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+       <View className="px-4 py-3 flex flex-row justify-between items-center bg-white rounded-t-lg h-10">
         <Text style={{fontFamily : "SPOTFONT"}} 
-        className="font-semibold text-white">Music</Text>   
+        className="font-semibold text-black">Music</Text> 
+        
+        <Image className="w-20 h-full" 
+        source={{ uri : "https://download.logo.wine/logo/Deezer/Deezer-Logo.wine.png"}}/>  
         {/* <Text className="font-semibold text-xs text-slate-700">SetTimout = 15 sec</Text>  */}
        </View>
 

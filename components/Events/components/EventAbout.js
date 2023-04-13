@@ -97,9 +97,9 @@ const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
             <TouchableOpacity
              onPress={() => selectedPrice(item)} 
             key={item} 
-            className="bg-gray-700 py-2 px-4 rounded-full items-center active:bg-yellow-200">
+            className="bg-white py-2 px-4 rounded-full items-center active:bg-yellow-200">
             <Text style={{fontFamily : "SPOTFONT"}} 
-            className="text-white font-semibold">Rs {item}</Text>
+            className="text-black font-semibold">Rs {item}</Text>
             </TouchableOpacity>
             ) )}
             </View>
@@ -134,7 +134,7 @@ const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
             {/* total and checkouit */}
 
             {IsPriceSelected && IsQtySelected ?
-            <View className="flex flex-row justify-between px-8 items-center">
+            <View className="flex flex-row justify-between px-4 items-center">
             <Text style={{fontFamily : "SPOTFONT"}} 
             className="text-white text-xs font-semibold">TOTAL : Rs {total}</Text>
             <TouchableOpacity onPress={() => handleCheckout(title)}>
@@ -156,23 +156,23 @@ const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
 
          <TouchableOpacity
          onPress={() => setModalVisible(!modalVisible)}>
-          <View className="bg-gray-700 px-20 py-3 rounded-full">
+          <View className="bg-white px-20 py-3 rounded-full">
              <Text style={{fontFamily : "SPOTFONT"}} 
-             className="text-white font-semibold">Buy ticket</Text>              
+             className="text-black font-semibold">Buy ticket</Text>              
           </View>
          </TouchableOpacity>
        </View>
     
     <Text style={{fontFamily : "SPOTFONT"}} 
-    className="text-lg font-semibold text-white">About</Text>
+    className="text-lg font-semibold text-white py-2">About</Text>
     {Showmore ? 
-    <View className="w-full h-[8vh] overflow-hidden">
+    <View className="w-full h-[10vh] overflow-hidden">
       <Text style={{fontFamily : "SPOTFONT"}} 
-      className="text-gray-400 text-xs">{description}</Text>
+      className="text-gray-500 text-xs">{description}</Text>
     </View> :
      <View className="w-full h-auto overflow-hidden">
        <Text style={{fontFamily : "SPOTFONT"}}
-        className="text-gray-400 text-xs">{description}</Text>
+        className="text-gray-500 text-xs">{description}</Text>
      </View>}
 
 
@@ -190,9 +190,9 @@ const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
     </TouchableOpacity>
 
     <View className="w-full pt-4">
-    <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+    <View className="px-4 py-2 bg-white rounded-t-lg">
           <Text style={{fontFamily : "SPOTFONT"}} 
-          className="font-semibold text-white">
+          className="font-semibold text-black">
             Event location
           </Text>
           <Text style={{fontFamily : "SPOTFONT"}} 

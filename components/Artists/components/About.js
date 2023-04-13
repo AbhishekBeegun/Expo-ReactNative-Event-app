@@ -34,9 +34,9 @@ function handleBook(name) {
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => handleBook(name)}>
-           <View className="bg-gray-700 px-20 py-3 rounded-full">
+           <View className="bg-white px-20 py-3 rounded-full">
               <Text style={{fontFamily : "SPOTFONT"}} 
-              className="text-white font-semibold">Book</Text>              
+              className="text-black font-semibold">Book</Text>              
            </View>
           </TouchableOpacity>
         </View>
@@ -44,15 +44,15 @@ function handleBook(name) {
         {/* about section */}
         <View className="px-4">
           <Text style={{fontFamily : "SPOTFONT"}} 
-          className="text-lg font-semibold text-white">About</Text>
+          className="text-lg font-semibold text-white py-2">About</Text>
           {Showmore ? 
-          <View className="w-full h-[8vh] overflow-hidden">
+          <View className="w-full h-[10vh] overflow-hidden">
             <Text style={{fontFamily : "SPOTFONT"}} 
-            className="text-gray-400 text-xs">{artistDescription}</Text>
+            className="text-gray-500 text-xs">{artistDescription}</Text>
           </View> :
            <View className="w-full h-auto overflow-hidden">
              <Text style={{fontFamily : "SPOTFONT"}} 
-             className="text-gray-400 text-xs">{artistDescription}</Text>
+             className="text-gray-500 text-xs">{artistDescription}</Text>
            </View>}
 
 
@@ -64,7 +64,7 @@ function handleBook(name) {
                 </View>:
                 <View className="flex flex-row items-center justify-center gap-2">
                 <Text style={{fontFamily : "SPOTFONT"}} 
-                className="font-semibold text-white">Show less</Text>
+                className="font-semibold text-white py-2">Show less</Text>
                 <AntDesign name="up" size={12} color="white" />
                 </View>}
 

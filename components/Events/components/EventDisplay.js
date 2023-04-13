@@ -20,9 +20,9 @@ const EventDisplay = ({artist}) => {
         {artist.map((item) => (
           <View key={item.id} className="bg-black px-2">
 
-        <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+        <View className="px-4 py-3 bg-white rounded-t-lg">
           <Text style={{fontFamily : "SPOTFONT"}} 
-          className="font-semibold text-white">Main artist</Text>   
+          className="font-semibold text-black">Main artist</Text>   
         </View>
 
           <TouchableOpacity onPress={handlePress} className="flex flex-row justify-between items-center px-10 py-4">
@@ -45,9 +45,9 @@ const EventDisplay = ({artist}) => {
 
        <View className="rounded-lg py-4">
        
-       <View className="px-4 py-2 bg-gray-700 rounded-t-lg">
+       <View className="px-4 py-3 bg-white rounded-t-lg">
         <Text style={{fontFamily : "SPOTFONT"}} 
-        className="font-semibold text-white">Video</Text>   
+        className="font-semibold text-black">Video</Text>   
         </View>
         <View className="w-full">
          <YoutubeIframe

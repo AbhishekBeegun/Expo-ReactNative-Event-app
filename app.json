@@ -6,7 +6,7 @@
     },
     "name": "LiveWire",
     "slug": "live-wire",
-    "version" : "0.0.1a",
+    "version" : "0.0.1b",
     "icon" : "./assets/logo.png",
     "android":{
       "adaptiveIcon":{

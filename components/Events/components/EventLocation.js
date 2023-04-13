@@ -17,7 +17,7 @@ const EventLocation = ({lat,long}) => {
         <MapView className="w-full h-[300px]"
         region={mapRegion}>       
         <Marker coordinate={mapRegion} title='Event Location'>
-            <View className="w-8 h-8 bg-red-500 rounded-full flex flex-row justify-center items-center">
+            <View className="w-8 h-8 bg-black rounded-full flex flex-row justify-center items-center">
               <Text className="text-xs text-white font-semibold">Here</Text> 
             </View>              
         </Marker>

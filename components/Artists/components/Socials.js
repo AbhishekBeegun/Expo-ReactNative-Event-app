@@ -11,7 +11,7 @@ const Socials = ({instagram,ratings}) => {
   const [Stars] = useState([])
 
   for(let i = 0 ; i < rating ; i++){
-    Stars.push(<FontAwesome key={i} name="star" size={15} color="white"  />)
+    Stars.push(<FontAwesome key={i} name="star" size={15} color="gold"  />)
   }
 
 function instagramprofile(){
@@ -26,38 +26,38 @@ function instagramprofile(){
       {/* reviews and social */}
       <View>
        
-        <View className="flex flex-row items-center justify-between px-4 py-2 bg-gray-700 rounded-t-lg">
+        <View className="flex flex-row items-center justify-between px-4 py-3 bg-white rounded-t-lg">
           <Text style={{fontFamily : "SPOTFONT"}} 
-          className="font-semibold text-white">Reviews</Text>
+          className="font-semibold text-black">Reviews</Text>
           <View className="flex flex-row gap-2 items-center">
-          {Stars}
+          {/* {Stars} */}
           </View>
       
         </View>
 
         <View className="flex flex-row items-center justify-center gap-5 py-4">
           <TouchableOpacity onPress={() => instagramprofile()}>
-           <View className="bg-gray-700 rounded-lg py-2 px-6">
+           <View className="border border-white rounded-lg py-2 px-6">
             
             <FontAwesome name="instagram" size={24} color="white" />
        
            </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
-          <View className="bg-gray-700 rounded-lg py-2 px-6">
+          <TouchableOpacity onPress={() => instagramprofile()}>
+          <View className="border border-white rounded-lg py-2 px-6">
           
           <MaterialIcons name="email" size={24} color="white" />   
          
           </View>
           </TouchableOpacity>
 
-          <View className="bg-gray-700 rounded-lg py-2 px-6">
+          <View className="border border-white rounded-lg py-2 px-6">
             
             <FontAwesome name="facebook" size={24} color="white" />
        
            </View>
-           <View className="bg-gray-700 rounded-lg py-2 px-6">
+           <View className="border border-white rounded-lg py-2 px-6">
             
             <FontAwesome name="whatsapp" size={24} color="white" />
        

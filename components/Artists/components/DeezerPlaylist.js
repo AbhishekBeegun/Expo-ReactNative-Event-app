@@ -75,7 +75,7 @@ const DeezerPlaylist = ({deezerID}) => {
           onPress={()=> MediaControl(item.preview)}
           className="w-full h-auto flex flex-row items-center justify-between border px-4 py-1">
             <View className="h-[80px] w-[80px]" >
-              <Image className="w-full h-full rounded-sm"
+              <Image className="w-full h-full rounded-full"
               source={{uri : `${item.album.cover_medium}`}}
               resizeMode="cover"/>
             </View>
