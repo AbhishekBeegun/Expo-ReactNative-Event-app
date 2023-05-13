@@ -198,7 +198,7 @@ const EventAbout = ({title,description,lat,long,nrml,vip,elite}) => {
           <Text style={{fontFamily : "SPOTFONT"}} 
           className="text-slate-600 text-xs">Click on the red circle for direction</Text>
         </View>
-      <EventLocation lat={lat} long={long}/>
+      {/* <EventLocation lat={lat} long={long}/> */}
 
     </View>
 

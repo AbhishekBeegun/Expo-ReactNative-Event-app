@@ -4,15 +4,23 @@
     "web": {
       "bundler": "metro"
     },
+    "orientation": "portrait",
     "name": "LiveWire",
-    "slug": "live-wire",
-    "version" : "0.0.1b",
-    "icon" : "./assets/logo.png",
-    "android":{
-      "adaptiveIcon":{
-        "foregroundImage" : "./assets/logo.png",
-        "backgroundColor" : "#ffffff"
+    "slug": "livewire",
+    "version": "0.0.1b",
+    "icon": "./assets/logo.png",
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.livewire.live"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2f2e6fb-eecc-4903-b925-9f5f73ac5675"
       }
-    }
+    },
+    "owner": "abhishekbeegun"
   }
 }
